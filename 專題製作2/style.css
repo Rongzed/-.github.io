@@ -1,0 +1,324 @@
+*{
+    padding:0;
+    margin: 0;
+}
+body{
+    background:black;   
+}
+/*-----------------Header-----------------*/
+header{
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    box-shadow: 0px 3px 10px wheat;
+}
+header h1 a{
+    text-decoration: none;
+    font-weight: 700;
+    color: beige;
+}
+header h1{ 
+    position:absolute;
+    left:10vw;
+    top:0;
+    line-height:80px; 
+}
+/*-----------------Navbar-----------------*/
+#menu-cion{
+    display: none;
+}
+.nav-menu{
+    display: flex;
+    color: wheat;
+    list-style: none; /*移除。list*/
+}
+.navbar a{
+    position: relative; 
+    justify-content: center;
+    right: 100px; 
+    margin-left: 40px;
+    color: wheat; 
+    font-size: 18px;
+    font-weight: 200;
+    text-decoration: none; 
+}
+/*-----------------圖片介紹-----------------*/
+.home{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,auto));
+    grid-gap:6rem;
+}
+.image-container{
+    position: relative;
+}
+.image-container > img{
+    display: block;
+    margin-top: 50px;
+    border: 2px solid wheat;
+    border-radius: 25px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    filter: brightness(85%);
+    transition: 1s ease-in-out 0s;
+    object-fit: cover;
+    object-position: center;
+}
+.image-container:hover > img{
+    transform: scale(1.05);
+    filter: brightness(100%);
+    border-radius: 60%;
+    cursor: pointer;
+}
+.image-container > .text-container{
+    position: absolute;
+    top:110px;
+    left: 60px;
+    font-size: 3rem;
+    font-weight: 700;
+    transition: 1.5s ease-in-out 0s;
+    opacity: 0;
+}
+.image-container:hover > .text-container{
+    z-index: 10;
+    transform: translateX(10%);
+    opacity: 1;
+}
+.image-container > .text-container p{
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: 2s ease-in-out 0s;
+    opacity: 0;
+}
+.image-container:hover > .text-container p{
+    z-index: 10;
+    opacity: 1;
+}
+.fill-in{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+    color:wheat;
+    z-index: 100;
+    filter:drop-shadow(10px 10px 3px wheat); /*文字與圖片投影(X Y 清晰度 顏色)*/
+    animation-name: pic;
+    animation-duration:4s;  
+    animation-iteration-count:infinite;
+}
+.fill-in > i{
+    font-size: 4rem;
+}
+/*-----------------公司介紹-----------------*/
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,auto));
+    grid-gap:8rem;  
+}
+.container > .container-content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    align-items: center;
+    line-height: 3em;
+    font-size: 1.5rem;      
+}
+.container-content > p{
+    color: azure;
+}
+/*-----------------填寫資料-----------------*/
+.emailForm{
+    position: relative;
+    border-radius: 20px;    
+    width: 500px;
+    padding: 40px 20px;
+    background:rgba(181, 153, 153, 0.5) ;
+    text-align: center;
+}
+.emailForm .input-box{
+    position: relative;
+    margin: 20px;
+}
+.emailForm input{
+    width: 50%;
+    border-radius: 5px; 
+    height: 30px;
+    font-size: 16px; 
+    padding-left: 10px;
+    background: crimson;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+ textarea{
+    width: 47%;
+    height: 180px;
+    border: none;
+    outline: none;
+}
+.emailForm input:focus
+{
+    transition:ease-in 0.5s;
+    transform: translateY(-5px);
+    box-shadow:5px 5px 10px 0px rgba(243, 244, 243, 0.5); 
+}
+.emailForm input::placeholder{
+    padding-left: 5px;
+    font-size: 15px;
+    color:azure;
+    font-family:微軟正黑體; 
+    opacity: 0.7;   
+}
+.input-box i{
+    position: absolute; 
+    top: 5px;
+    font-size: 20px;
+    right: 80px; 
+}
+ textarea{
+    resize: none; /*不可調整大小*/
+    padding-left:2px;
+    width: 40%;
+    height: 22%;
+    font-family:'Franklin Gothic Medium', 
+    'Arial Narrow', 
+    Arial, sans-serif,
+    '微軟正黑體';
+    font-size:1rem ;
+ }  
+.emailForm  label{
+    position: absolute;
+    color: antiquewhite;
+    left:-20rem;
+    right: 0;
+    padding-right:20px;   
+}
+button{
+    margin-top: 20px;
+    padding: 8px 40px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+    color:wheat;
+    z-index: 100;
+    filter:drop-shadow(10px 10px 3px wheat); /*文字與圖片投影(X Y 清晰度 顏色)*/
+    animation-name: pic;
+    animation-duration:4s;  
+    animation-iteration-count:infinite;
+}
+.intro > i{
+    font-size: 4rem;
+}
+/*-----------------個人簡介-----------------*/
+.card-content{
+    display: grid;
+    grid-template-columns: repeat(3,495px);
+    gap: 1rem;
+}
+.card-container{
+    padding-right: 30px;
+}
+.card-text{  
+    border-radius: 5px;
+    color: wheat;
+    width: 100%;
+    height: 400px;
+    background: rgba(226, 98, 98, 0.532);
+}
+.card-text h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+.card-text hr{
+    transition: 1s ease-in-out 0s;
+    opacity: 0;
+}
+.card-text:hover hr{
+    opacity: 1;
+    margin: 30px 60px 30px 60px;
+}
+.card-text p{
+    font-size: 18px;
+    line-height: 2rem;
+    margin-top: 30px;
+    word-break: break-all;
+    transition: 2s ease-in-out 0s;
+    opacity: 0;
+}
+.card-text:hover  p{
+    opacity: 0.7;
+    margin: 15px 0px 0px 30px;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 100px;
+    width: 100%;
+    background: black;
+    color:wheat;
+    font-size: 16px;
+    box-shadow: 0px 3px 20px wheat;
+}
+@keyframes pic{
+    0%{transform:translate(0px,0px);}  
+    50% {transform:translate(0px,-10px);}
+    100%{transform:translate(0px,0px);}
+}
+@media screen and (max-width: 768px){
+    /*-----------------LOGO-----------------*/
+    header h1{
+        left: 10%;
+        line-height: 2.5;
+    /*-----------------hamburger-----------------*/
+    }.nav-menu{
+        display: none;
+    }
+    #menu-icon{
+        display: block;
+        position: absolute;
+        right: 40px;
+        top: 20px;
+        background-color:transparent ;
+        color: wheat;
+        font-size: 35px;
+        border: none;
+        cursor: pointer;
+    }
+    /*-----------------填寫資料-----------------*/
+    .emailForm{
+        position: relative;
+        margin-top: 40px;
+        width: auto;
+        left: 1px;
+    }
+    .input-box i{
+        position: absolute;
+        right: 60px;
+    }
+    button{
+        position: relative;
+        bottom: 10px;
+    }
+    /*-----------------個人簡介-----------------*/
+    .card-content{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 2rem;
+    }
+      
+}
+
